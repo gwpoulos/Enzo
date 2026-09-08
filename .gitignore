@@ -1,5 +1,7 @@
 # Local commit backups (timestamped comic.json copies) — keep out of the repo
 Backup/
+editor.html
+serve.bat
 
 # OS junk
 Thumbs.db

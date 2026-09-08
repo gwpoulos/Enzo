@@ -4,6 +4,4 @@ The Reader interface will have a navigation menu for Title, Chapter or Page, inc
 
 The editor application will have a thumbnail of all of the images in the Images folder (preferably sorted initially by date). These can be dragged and dropped into a particular page order after each particular chapter. The Title and chapter headers can be renamed and associated with one image or multiple alternate images. Each page can also have zero or more alternate images. Any unused images will be kept in a separate section as potential drop-ins for one of the sections in the comic book. There will be a commit button which will save the setup into the database, which will be accessed by the reader application.  The commit button should also create a backup of the database, prior to creating a new one. There shoul also be the ability to view the individual images full-size.
 
-Currently, my working folder is on the windows 10 side in C:\Users\gwpoulos\Projects\Enzo, with the images in the Images subfolder.
 
-Please ask me clarifying questions and maybe add some suggestions prior to initiating any actions. 

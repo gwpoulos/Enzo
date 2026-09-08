@@ -57,11 +57,6 @@
         },
         {
           "images": [
-            "gemini_remix_20260201_192230.jpg"
-          ]
-        },
-        {
-          "images": [
             "IMG_20260907_222434.jpg"
           ]
         },
@@ -242,8 +237,16 @@
     {
       "id": "ch-ud0gg3",
       "name": "Enzo's Conference",
-      "images": [],
+      "images": [
+        "gemini_remix_20260908_112247.jpg",
+        "gemini_remix_20260908_112346.jpg"
+      ],
       "pages": [
+        {
+          "images": [
+            "gemini_remix_20260325_111247.jpg"
+          ]
+        },
         {
           "images": [
             "gemini_remix_20260321_183018.jpg",
@@ -330,7 +333,7 @@
         },
         {
           "images": [
-            "gemini_remix_20260325_111247.jpg"
+            "gemini_remix_20260201_192230.jpg"
           ]
         },
         {
@@ -965,7 +968,10 @@
     {
       "id": "ch-2hmu40",
       "name": "Plumber Punchlines",
-      "images": [],
+      "images": [
+        "gemini_remix_20260908_115912.jpg",
+        "gemini_remix_20260908_120441.jpg"
+      ],
       "pages": [
         {
           "images": [
@@ -1932,7 +1938,10 @@
     {
       "id": "ch-bql4cw",
       "name": "Enzo and Friends",
-      "images": [],
+      "images": [
+        "gemini_remix_20260908_121038.jpg",
+        "gemini_remix_20260908_112725.jpg"
+      ],
       "pages": [
         {
           "images": [
@@ -2103,7 +2112,10 @@
     {
       "id": "ch-39rlbq",
       "name": "Growing Pains",
-      "images": [],
+      "images": [
+        "gemini_remix_20260908_120640.jpg",
+        "gemini_remix_20260908_120913.jpg"
+      ],
       "pages": []
     }
   ],

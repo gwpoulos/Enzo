@@ -400,19 +400,27 @@
         },
         {
           "images": [
+            "gemini_remix_20260522_102010.jpg"
+          ]
+        },
+        {
+          "images": [
             "gemini_remix_20260522_093932.jpg"
           ]
         },
         {
           "images": [
-            "gemini_remix_20260522_102010.jpg",
-            "gemini_remix_20260522_102245.jpg",
-            "gemini_remix_20260522_102623.jpg"
+            "gemini_remix_20260522_102245.jpg"
           ]
         },
         {
           "images": [
             "IMG_20260516_165807.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260522_102623.jpg"
           ]
         },
         {
@@ -957,16 +965,44 @@
     {
       "id": "ch-2hmu40",
       "name": "Plumber Punchlines",
-      "images": [
-        "IMG_20260907_221247.jpg",
-        "IMG_20260907_221241.jpg",
-        "IMG_20260907_221225.jpg",
-        "IMG_20260907_221209.jpg",
-        "IMG_20260907_221231.jpg",
-        "IMG_20260907_221213.jpg",
-        "IMG_20260907_221220.jpg"
-      ],
-      "pages": []
+      "images": [],
+      "pages": [
+        {
+          "images": [
+            "IMG_20260907_221247.jpg"
+          ]
+        },
+        {
+          "images": [
+            "IMG_20260907_221241.jpg"
+          ]
+        },
+        {
+          "images": [
+            "IMG_20260907_221225.jpg"
+          ]
+        },
+        {
+          "images": [
+            "IMG_20260907_221209.jpg"
+          ]
+        },
+        {
+          "images": [
+            "IMG_20260907_221213.jpg"
+          ]
+        },
+        {
+          "images": [
+            "IMG_20260907_221231.jpg"
+          ]
+        },
+        {
+          "images": [
+            "IMG_20260907_221220.jpg"
+          ]
+        }
+      ]
     },
     {
       "id": "ch-6hpybt",
@@ -2073,26 +2109,28 @@
   ],
   "version": 1,
   "excluded": [
-    "gemini_remix_20260718_132400.jpg",
-    "gemini_remix_20260408_142948.jpg",
-    "gemini_remix_20260807_142234.jpg",
-    "42f93ac1-6690-4125-99fc-b5ea3d09c5f4.png",
     "gemini_remix_20260809_174140.jpg",
-    "gemini_remix_20260822_141307.jpg",
-    "gemini_remix_20260823_190949.jpg",
     "gemini_remix_20260808_070706.jpg",
-    "Generated Image April 25, 2026 - 3_36PM.png",
-    "gemini_remix_20260308_143241.jpg",
     "IMG_20260423_075810.jpg",
     "IMG_20260329_142047.jpg",
+    "IMG_20260907_222937.jpg"
+  ],
+  "deleted": [
+    "gemini_remix_20260408_142948.jpg",
+    "gemini_remix_20260807_142234.jpg",
+    "gemini_remix_20260822_141307.jpg",
+    "gemini_remix_20260718_132400.jpg",
+    "42f93ac1-6690-4125-99fc-b5ea3d09c5f4.png",
     "IMG_20260907_223402.jpg",
-    "IMG_20260907_222937.jpg",
+    "Generated Image April 25, 2026 - 3_36PM.png",
+    "gemini_remix_20260308_143241.jpg",
     "IMG_20260907_223028.jpg",
     "IMG_20260907_221142.jpg",
-    "IMG_20260907_222602.jpg",
     "IMG_20260907_221239.jpg",
-    "IMG_20260323_185712.jpg",
+    "gemini_remix_20260618_070432.jpg",
     "gemini_remix_20260701_123113.jpg",
-    "gemini_remix_20260618_070432.jpg"
+    "IMG_20260323_185712.jpg",
+    "IMG_20260907_222602.jpg",
+    "gemini_remix_20260823_190949.jpg"
   ]
 }

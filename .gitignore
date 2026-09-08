@@ -1,0 +1,11 @@
+# Local commit backups (timestamped comic.json copies) — keep out of the repo
+Backup/
+
+# OS junk
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor/browser temp files
+*.tmp
+*.bak

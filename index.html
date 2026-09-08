@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Chronicles of Enzo</title>
+<style>
+html,body{margin:0;height:100%;background:#0d0d10;color:#eee;font-family:Georgia,'Times New Roman',serif;overflow:hidden;}
+:root{--bar-h:52px;}
+#bar{position:fixed;top:0;left:0;right:0;height:var(--bar-h);z-index:10;display:flex;gap:8px;align-items:center;
+  justify-content:center;padding:0 12px;background:rgba(10,10,14,.92);transition:transform .3s ease;}
+body.bar-hidden #bar{transform:translateY(-100%);}
+#bar button{background:#1d1d24;color:#eee;border:1px solid #444;border-radius:6px;padding:6px 12px;
+  font-size:16px;cursor:pointer;font-family:inherit;line-height:1;}
+#bar button:hover{background:#2a2a33;}
+#bar button:disabled{opacity:.35;cursor:default;}
+#bar select{background:#1d1d24;color:#eee;border:1px solid #444;border-radius:6px;padding:6px 10px;
+  font-size:14px;cursor:pointer;font-family:inherit;width:220px;}
+#bar input{background:#1d1d24;color:#eee;border:1px solid #444;border-radius:6px;padding:6px 8px;
+  font-size:14px;width:64px;font-family:inherit;}
+#bar .lbl{color:#888;font-size:12px;}
+#altbtn{background:#1d4ed8;border-color:#1d4ed8;font-size:17px;padding:6px 11px;position:relative;
+  visibility:hidden;}
+#altbtn.on{visibility:visible;}
+#altbtn:hover{background:#2563eb;}
+#altcount{position:absolute;top:-8px;right:-8px;background:#e05555;color:#fff;font-size:10px;font-weight:700;
+  border-radius:9px;padding:1px 5px;line-height:1;}
+#stage{position:fixed;top:var(--bar-h);left:0;right:0;bottom:0;display:flex;align-items:center;
+  justify-content:center;transition:top .3s ease;}
+body.bar-hidden #stage{top:0;}
+#img{max-width:100%;max-height:100%;object-fit:contain;display:none;}
+#ph{display:none;text-align:center;padding:40px;}
+#ph .big{font-size:44px;letter-spacing:2px;margin-bottom:14px;}
+#ph .sub{font-size:15px;color:#999;}
+#pagenum{position:fixed;bottom:10px;right:16px;z-index:10;font-size:14px;color:#bbb;
+  background:rgba(0,0,0,.5);padding:4px 10px;border-radius:6px;transition:opacity .3s ease;}
+body.bar-hidden #pagenum{opacity:0;}
+</style>
+</head>
+<body>
+<div id="bar">
+  <button id="first" title="First page">&#171;</button>
+  <button id="prev" title="Previous">&#9664;</button>
+  <select id="chapters" title="Jump to chapter"></select>
+  <span class="lbl">Page</span>
+  <input id="pagein" type="number" min="1" title="Type a page number and press Enter">
+  <button id="next" title="Next">&#9654;</button>
+  <button id="last" title="Last page">&#187;</button>
+  <button id="altbtn" title="Next alternate image">&#8635;<span id="altcount"></span></button>
+</div>
+<div id="stage">
+  <img id="img" alt="">
+  <div id="ph"><div class="big" id="ph-big"></div><div class="sub" id="ph-sub"></div></div>
+</div>
+<div id="pagenum"></div>
+<script>
+var BOOK_DATA = null;
+var seq = [];
+var pos = 0;
+var altIdx = {};
+var chSel = document.getElementById('chapters');
+function buildSeq() {
+  seq = [];
+  seq.push({type:'title'});
+  var pnum = 0;
+  for (var c = 0; c < BOOK_DATA.chapters.length; c++) {
+    var ch0 = BOOK_DATA.chapters[c];
+    pnum++;
+    seq.push({type:'chapter', ch: ch0.id, num: pnum});
+    for (var i = 0; i < ch0.pages.length; i++) { pnum++; seq.push({type:'page', ch: ch0.id, i: i, num: pnum}); }
+  }
+  pos = 0;
+  altIdx = {};
+  chSel.innerHTML = '';
+  var titleOpt = document.createElement('option');
+  titleOpt.value = '__title__';
+  titleOpt.textContent = BOOK_DATA.title || 'Title';
+  chSel.appendChild(titleOpt);
+  for (var c2 = 0; c2 < BOOK_DATA.chapters.length; c2++) {
+    var ch = BOOK_DATA.chapters[c2];
+    var o = document.createElement('option');
+    o.value = ch.id;
+    o.textContent = ch.name;
+    chSel.appendChild(o);
+  }
+}
+function chapterById(id) {
+  for (var c = 0; c < BOOK_DATA.chapters.length; c++) if (BOOK_DATA.chapters[c].id === id) return BOOK_DATA.chapters[c];
+  return {name:'?', images:[], pages:[]};
+}
+function currentImages() {
+  var it = seq[pos];
+  if (it.type === 'title') return BOOK_DATA.titleImages || [];
+  if (it.type === 'chapter') return chapterById(it.ch).images || [];
+  return chapterById(it.ch).pages[it.i].images || [];
+}
+function firstPageOf(chId) {
+  // jump to the chapter heading page (even if it has no image)
+  for (var s = 0; s < seq.length; s++) if (seq[s].type === 'chapter' && seq[s].ch === chId) return s;
+  for (var s = 0; s < seq.length; s++) if (seq[s].type === 'page' && seq[s].ch === chId) return s;
+  return 0;
+}
+function show() {
+  var it = seq[pos];
+  var imgs = currentImages();
+  var img = document.getElementById('img');
+  var ph = document.getElementById('ph');
+  var alt = document.getElementById('altbtn');
+  var pn = document.getElementById('pagenum');
+  if (imgs.length > 0) {
+    if (!(pos in altIdx)) altIdx[pos] = 0; // always start on the first image
+    img.src = 'Images/' + encodeURIComponent(imgs[altIdx[pos]]);
+    img.style.display = 'block';
+    ph.style.display = 'none';
+    if (imgs.length > 1) {
+      alt.classList.add('on');
+      document.getElementById('altcount').textContent = (altIdx[pos] + 1) + '/' + imgs.length;
+    } else alt.classList.remove('on');
+  } else {
+    img.style.display = 'none';
+    ph.style.display = 'block';
+    alt.classList.remove('on');
+    if (it.type === 'title') {
+      document.getElementById('ph-big').textContent = BOOK_DATA.title || 'The Chronicles of Enzo';
+      document.getElementById('ph-sub').textContent = 'No title image set';
+    } else if (it.type === 'chapter') {
+      document.getElementById('ph-big').textContent = chapterById(it.ch).name;
+      document.getElementById('ph-sub').textContent = 'No chapter image set';
+    } else {
+      document.getElementById('ph-big').textContent = 'Page ' + it.num;
+      document.getElementById('ph-sub').textContent = 'No image set for this page';
+    }
+  }
+  // navigator page number always matches the current page
+  var pagein = document.getElementById('pagein');
+  pagein.value = (it.type === 'page' || it.type === 'chapter') ? it.num : '';
+  pn.textContent = (it.type === 'page' || it.type === 'chapter') ? 'Page ' + it.num : (it.type === 'title' ? 'Title' : '');
+  document.getElementById('first').disabled = (pos === 0);
+  document.getElementById('prev').disabled = (pos === 0);
+  document.getElementById('next').disabled = (pos === seq.length - 1);
+  document.getElementById('last').disabled = (pos === seq.length - 1);
+  chSel.value = it.type === 'title' ? '__title__' : it.ch;
+}
+document.getElementById('first').onclick = function(){ pos = 0; show(); };
+document.getElementById('last').onclick = function(){ pos = seq.length - 1; show(); };
+document.getElementById('prev').onclick = function(){ if (pos > 0) { pos--; show(); } };
+document.getElementById('next').onclick = function(){ if (pos < seq.length - 1) { pos++; show(); } };
+document.getElementById('altbtn').onclick = function(){
+  var n = currentImages().length;
+  if (n > 1) { altIdx[pos] = (altIdx[pos] + 1) % n; show(); }
+};
+chSel.onchange = function(){
+  if (chSel.value === '__title__') { pos = 0; show(); return; }
+  pos = firstPageOf(chSel.value); show();
+};
+document.getElementById('pagein').addEventListener('keydown', function(e){
+  if (e.key === 'Enter') {
+    var n = parseInt(this.value, 10);
+    if (!isNaN(n)) {
+      for (var s = 0; s < seq.length; s++) if (seq[s].type === 'page' && seq[s].num === n) { pos = s; show(); return; }
+    }
+  }
+});
+document.addEventListener('keydown', function(e){
+  if (e.target && e.target.tagName === 'INPUT') return;
+  if (e.key === 'ArrowRight') { if (pos < seq.length - 1) { pos++; show(); } }
+  else if (e.key === 'ArrowLeft') { if (pos > 0) { pos--; show(); } }
+  else if (e.key === 'Home') { pos = 0; show(); }
+  else if (e.key === 'End') { pos = seq.length - 1; show(); }
+});
+// auto-hide the bar when idle
+var hideT;
+function wake(){
+  document.body.classList.remove('bar-hidden');
+  clearTimeout(hideT);
+  hideT = setTimeout(function(){ document.body.classList.add('bar-hidden'); }, 30000);
+}
+['mousemove','mousedown','keydown','touchstart'].forEach(function(ev){
+  document.addEventListener(ev, wake, {passive:true});
+});
+wake();
+function loadData(data) {
+  BOOK_DATA = data;
+  buildSeq();
+  show();
+}
+function showLoadError(msg) {
+  var ph = document.getElementById('ph');
+  var img = document.getElementById('img');
+  img.style.display = 'none';
+  ph.style.display = 'block';
+  document.getElementById('ph-big').textContent = 'Could not load comic.json';
+  document.getElementById('ph-sub').textContent = (msg || '') + ' — click below to pick the file manually.';
+  var btn = document.createElement('button');
+  btn.textContent = 'Load comic.json';
+  btn.style.cssText = 'margin-top:18px;background:#1d4ed8;color:#fff;border:1px solid #1d4ed8;border-radius:6px;padding:8px 16px;font-size:15px;cursor:pointer;font-family:inherit;';
+  var inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = '.json,application/json';
+  inp.style.display = 'none';
+  inp.onchange = function() {
+    var f = inp.files[0];
+    if (!f) return;
+    var r = new FileReader();
+    r.onload = function() {
+      try { loadData(JSON.parse(r.result)); }
+      catch (e) { alert('Invalid comic.json: ' + e.message); }
+    };
+    r.readAsText(f);
+  };
+  btn.onclick = function(){ inp.click(); };
+  ph.appendChild(btn);
+  ph.appendChild(inp);
+}
+// load the book data: fetch comic.json (works on a web server / GitHub Pages);
+// if that fails (e.g. double-clicked locally via file://), offer a file picker.
+(function init() {
+  if (location.protocol === 'file:') {
+    // fetch is blocked on file:// in most browsers — go straight to the picker
+    showLoadError('Opening this file directly blocks automatic loading.');
+    return;
+  }
+  fetch('comic.json', { cache: 'no-cache' })
+    .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(loadData)
+    .catch(function(e){ showLoadError(e.message); });
+})();
+</script>
+</body>
+</html>

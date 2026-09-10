@@ -2102,19 +2102,27 @@
             "gemini_remix_20260826_162002.jpg",
             "gemini_remix_20260809_181355.jpg"
           ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260904_133016.jpg",
+            "gemini_remix_20260904_133150.jpg",
+            "gemini_remix_20260904_133223.jpg",
+            "gemini_remix_20260904_133308.jpg"
+          ]
         }
       ]
     }
   ],
   "version": 1,
   "excluded": [
-    "gemini_remix_20260809_174140.jpg",
     "gemini_remix_20260808_070706.jpg",
     "IMG_20260423_075810.jpg",
     "IMG_20260329_142047.jpg",
     "IMG_20260907_222937.jpg",
     "gemini_remix_20260423_085059.jpg",
-    "IMG_20260317_095817.jpg"
+    "IMG_20260317_095817.jpg",
+    "gemini_remix_20260809_174140.jpg"
   ],
   "deleted": [
     "gemini_remix_20260408_142948.jpg",

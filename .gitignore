@@ -13,3 +13,4 @@ desktop.ini
 # Editor/browser temp files
 *.tmp
 *.bak
+*.bak*

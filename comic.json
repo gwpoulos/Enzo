@@ -107,6 +107,11 @@
         },
         {
           "images": [
+            "1_4985961958365726760.mp4"
+          ]
+        },
+        {
+          "images": [
             "gemini_remix_20260401_143624.jpg"
           ]
         },
@@ -1196,6 +1201,16 @@
         },
         {
           "images": [
+            "1_4987870813630761430.mp4"
+          ]
+        },
+        {
+          "images": [
+            "1_4990122613444446560.mp4"
+          ]
+        },
+        {
+          "images": [
             "IMG_20260905_125013.jpg"
           ]
         },
@@ -1332,6 +1347,37 @@
         {
           "images": [
             "IMG_20260907_222309.jpg"
+          ]
+        },
+        {
+          "images": [
+            "1_4985619013817075764.mp4"
+          ]
+        },
+        {
+          "images": [
+            "1_4987870813630761269.mp4"
+          ]
+        },
+        {
+          "images": [
+            "1_4983710158552041654.mp4"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260927_071419.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260926_075755.jpg",
+            "gemini_remix_20260926_080611.jpg"
+          ]
+        },
+        {
+          "images": [
+            "1_5003882146767570990.mp4"
           ]
         }
       ]
@@ -2086,6 +2132,11 @@
           "images": [
             "IMG_20260907_223411.png"
           ]
+        },
+        {
+          "images": [
+            "1_4983710158552041640.mp4"
+          ]
         }
       ]
     },
@@ -2139,6 +2190,99 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ch-rkbx4f",
+      "name": "School Ties",
+      "images": [],
+      "pages": [
+        {
+          "images": [
+            "gemini_remix_20260914_212812.jpg",
+            "gemini_remix_20260914_212656.jpg",
+            "gemini_remix_20260914_212747.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260914_211746.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260916_181410.jpg",
+            "gemini_remix_20260916_181432.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260916_181631.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260916_182015.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260916_201545.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260916_201847.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260920_105455.jpg",
+            "gemini_remix_20260920_105539.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260920_105938.jpg",
+            "gemini_remix_20260920_110006.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260920_110203.jpg",
+            "gemini_remix_20260920_110059.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260920_142721.jpg",
+            "gemini_remix_20260920_142624.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260925_164354.jpg",
+            "gemini_remix_20260925_164527.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260925_173613.jpg",
+            "gemini_remix_20260925_173740.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260925_174046.jpg",
+            "gemini_remix_20260925_173938.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260925_174247.jpg",
+            "gemini_remix_20260925_174153.jpg"
+          ]
+        }
+      ]
     }
   ],
   "version": 1,
@@ -2149,7 +2293,13 @@
     "IMG_20260907_222937.jpg",
     "gemini_remix_20260423_085059.jpg",
     "IMG_20260317_095817.jpg",
-    "gemini_remix_20260809_174140.jpg"
+    "gemini_remix_20260809_174140.jpg",
+    "gemini_remix_20260911_140454.jpg",
+    "gemini_remix_20260912_131540.jpg",
+    "gemini_remix_20260912_172106.jpg",
+    "IMG_20260913_213011_452.jpg",
+    "gemini_remix_20260918_140422.jpg",
+    "gemini_remix_20260918_140357.jpg"
   ],
   "deleted": [
     "gemini_remix_20260408_142948.jpg",

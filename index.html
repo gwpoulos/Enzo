@@ -31,7 +31,7 @@ body.bar-hidden #bar{transform:translateY(-100%);}
 #stage{position:fixed;top:var(--bar-h);left:0;right:0;bottom:0;display:flex;align-items:center;
   justify-content:center;transition:top .3s ease;}
 body.bar-hidden #stage{top:0;}
-#img{max-width:100%;max-height:100%;object-fit:contain;display:none;}
+#img,#vid{max-width:100%;max-height:100%;object-fit:contain;display:none;}
 #ph{display:none;text-align:center;padding:40px;}
 #ph .big{font-size:44px;letter-spacing:2px;margin-bottom:14px;}
 #ph .sub{font-size:15px;color:#999;}
@@ -49,10 +49,11 @@ body.bar-hidden #pagenum{opacity:0;}
   <input id="pagein" type="number" min="1" title="Type a page number and press Enter">
   <button id="next" title="Next">&#9654;</button>
   <button id="last" title="Last page">&#187;</button>
-  <button id="altbtn" title="Next alternate image">&#8635;<span id="altcount"></span></button>
+  <button id="altbtn" title="Next alternate media">&#8635;<span id="altcount"></span></button>
 </div>
 <div id="stage">
   <img id="img" alt="">
+  <video id="vid" controls loop></video>
   <div id="ph"><div class="big" id="ph-big"></div><div class="sub" id="ph-sub"></div></div>
 </div>
 <div id="pagenum"></div>
@@ -62,6 +63,8 @@ var seq = [];
 var pos = 0;
 var altIdx = {};
 var chSel = document.getElementById('chapters');
+var VIDEO_EXT = /\.(mp4|webm|mov|avi|mkv|ogv)$/i;
+function isVideo(name){ return VIDEO_EXT.test(name); }
 function buildSeq() {
   seq = [];
   seq.push({type:'title'});
@@ -110,10 +113,21 @@ function show() {
   var ph = document.getElementById('ph');
   var alt = document.getElementById('altbtn');
   var pn = document.getElementById('pagenum');
+  var vid = document.getElementById('vid');
   if (imgs.length > 0) {
-    if (!(pos in altIdx)) altIdx[pos] = 0; // always start on the first image
-    img.src = 'Images/' + encodeURIComponent(imgs[altIdx[pos]]);
-    img.style.display = 'block';
+    if (!(pos in altIdx)) altIdx[pos] = 0; // always start on the first media
+    var fname = imgs[altIdx[pos]];
+    if (isVideo(fname)) {
+      img.style.display = 'none';
+      vid.src = 'Images/' + encodeURIComponent(fname);
+      vid.muted = true; vid.loop = true; vid.controls = true;
+      vid.style.display = 'block';
+      var pr = vid.play(); if (pr && pr.catch) pr.catch(function(){});
+    } else {
+      vid.pause(); vid.removeAttribute('src'); vid.load(); vid.style.display = 'none';
+      img.src = 'Images/' + encodeURIComponent(fname);
+      img.style.display = 'block';
+    }
     ph.style.display = 'none';
     if (imgs.length > 1) {
       alt.classList.add('on');
@@ -121,6 +135,7 @@ function show() {
     } else alt.classList.remove('on');
   } else {
     img.style.display = 'none';
+    vid.pause(); vid.removeAttribute('src'); vid.load(); vid.style.display = 'none';
     ph.style.display = 'block';
     alt.classList.remove('on');
     if (it.type === 'title') {
@@ -190,7 +205,9 @@ function loadData(data) {
 function showLoadError(msg) {
   var ph = document.getElementById('ph');
   var img = document.getElementById('img');
+  var vid = document.getElementById('vid');
   img.style.display = 'none';
+  if (vid) vid.style.display = 'none';
   ph.style.display = 'block';
   document.getElementById('ph-big').textContent = 'Could not load comic.json';
   document.getElementById('ph-sub').textContent = (msg || '') + ' — click below to pick the file manually.';

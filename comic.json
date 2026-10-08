@@ -2027,6 +2027,16 @@
         },
         {
           "images": [
+            "MiniMax_H3_00008_.mp4"
+          ]
+        },
+        {
+          "images": [
+            "MiniMax_H3_00009_.mp4"
+          ]
+        },
+        {
+          "images": [
             "IMG_20260907_221316.jpg"
           ]
         },
@@ -2137,6 +2147,16 @@
           "images": [
             "1_4983710158552041640.mp4"
           ]
+        },
+        {
+          "images": [
+            "IMG_20260930_141410.jpg"
+          ]
+        },
+        {
+          "images": [
+            "IMG_20261002_183613.jpg"
+          ]
         }
       ]
     },
@@ -2193,8 +2213,11 @@
     },
     {
       "id": "ch-rkbx4f",
-      "name": "School Ties",
-      "images": [],
+      "name": "Tweed, Ties, and Other Forms of Torture",
+      "images": [
+        "gemini_remix_20260929_215057.jpg",
+        "gemini_remix_20260929_214542.jpg"
+      ],
       "pages": [
         {
           "images": [
@@ -2212,6 +2235,17 @@
           "images": [
             "gemini_remix_20260916_181410.jpg",
             "gemini_remix_20260916_181432.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261006_070128.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260929_220001.jpg",
+            "gemini_remix_20260929_215857.jpg"
           ]
         },
         {
@@ -2280,6 +2314,41 @@
           "images": [
             "gemini_remix_20260925_174247.jpg",
             "gemini_remix_20260925_174153.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260929_220150.jpg",
+            "gemini_remix_20260929_220230.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260929_220431.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261006_191031.jpg",
+            "gemini_remix_20261006_190953.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20260929_220651.jpg",
+            "gemini_remix_20260929_220624.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261006_191442.jpg",
+            "gemini_remix_20261006_191351.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261006_191959.jpg",
+            "gemini_remix_20261006_191859.jpg"
           ]
         }
       ]

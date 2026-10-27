@@ -2350,6 +2350,127 @@
             "gemini_remix_20261006_191959.jpg",
             "gemini_remix_20261006_191859.jpg"
           ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261010_130441.jpg",
+            "gemini_remix_20261010_130157.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261010_211512.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261011_090507.jpg",
+            "gemini_remix_20261011_085855.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261011_091015.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261013_182632.jpg",
+            "gemini_remix_20261013_182505.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261013_194043.jpg",
+            "gemini_remix_20261013_194237.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261013_194550.jpg",
+            "gemini_remix_20261013_194651.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261013_195207.jpg",
+            "gemini_remix_20261013_195333.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261013_195515.jpg",
+            "gemini_remix_20261013_200015.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261018_141004.jpg",
+            "gemini_remix_20261013_201110.jpg",
+            "gemini_remix_20261013_200833.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch-yj2uvv",
+      "name": "Ctrl+Alt+Despair",
+      "images": [
+        "gemini_remix_20261016_130304.jpg",
+        "gemini_remix_20261016_124132.jpg",
+        "gemini_remix_20261016_130852.jpg",
+        "gemini_remix_20261016_130558.jpg",
+        "gemini_remix_20261016_130817.jpg"
+      ],
+      "pages": [
+        {
+          "images": [
+            "gemini_remix_20261016_123149.jpg",
+            "gemini_remix_20261016_123040.jpg",
+            "gemini_remix_20261016_122951.jpg",
+            "gemini_remix_20261016_123119.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261025_155813.jpg",
+            "gemini_remix_20261025_074632.jpg",
+            "gemini_remix_20261025_074524.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261021_185024.jpg",
+            "gemini_remix_20261021_185136.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261021_185659.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261025_073407.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261021_185319.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261021_190059.jpg",
+            "gemini_remix_20261021_190353.jpg"
+          ]
+        },
+        {
+          "images": [
+            "gemini_remix_20261025_075453.jpg",
+            "gemini_remix_20261025_075322.jpg",
+            "gemini_remix_20261025_075433.jpg"
+          ]
         }
       ]
     }
@@ -2368,7 +2489,8 @@
     "gemini_remix_20260912_172106.jpg",
     "IMG_20260913_213011_452.jpg",
     "gemini_remix_20260918_140422.jpg",
-    "gemini_remix_20260918_140357.jpg"
+    "gemini_remix_20260918_140357.jpg",
+    "gemini_remix_20261013_201045.jpg"
   ],
   "deleted": [
     "gemini_remix_20260408_142948.jpg",
@@ -2387,7 +2509,6 @@
     "IMG_20260323_185712.jpg",
     "IMG_20260907_222602.jpg",
     "gemini_remix_20260823_190949.jpg",
-    "IMG_20260425_192635.jpg",
     "gemini_remix_20260403_185741.jpg"
   ]
 }
